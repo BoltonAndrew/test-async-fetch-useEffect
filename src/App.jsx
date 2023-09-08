@@ -31,19 +31,23 @@ function App() {
     // console.log(await nicheData(converted.berry));
   }
 
-  return (
+  return return (
     <div className="App">
       <h1>Fetch, Async & useEffect</h1>
-      {data && <p>{data.map((data, key ) => 
-          {return ( <div key={key}> data.DATE + 
-          " , " + 
-          data.PRCP + "<br/>"
-          </div>
-          ); 
-        })}
-      }
+      {data && (
+        <p>
+          {data.map((data, key) => {
+            return (
+              <div key={key}>
+                {" "}
+                {data.DATE} , {data.PRCP}<br />
+              </div>
+            );
+          })}
+        </p>
+      )}
       <button onClick={grabData}>Fetch Data</button>
-    
+    </div>
   );
 }
 
